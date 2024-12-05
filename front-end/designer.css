@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+body{
+    background:linear-gradient(to top, rgb(0, 53, 0), green, rgb(2, 221, 2));
+    
+}
+
+#main{ 
+    text-align: center;
+    background-color: white;
+    margin: auto; 
+    margin-top: 150px;
+    width: 200px;
+    height: 150px;
+    border-style: groove;
+    border-color: black;
+    border-radius: 5px;
+    padding: 10px 0px 10px 20px;
+    
+}
+#divnome{
+    text-align: left;
+    margin-top: 10px;
+    height: 50px;
+    width: 150px;
+}
+#divsenha{
+    text-align: left;
+    margin-top: 3px;
+    height: 50px;
+    width: 150px;
+}
+#divbutão{
+    margin-top: 3px;
+}
