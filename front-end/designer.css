@@ -23,7 +23,7 @@ body{
     width: 200px;
     height: 150px;
     border-style: groove;
-    border-color: black;
+    border-color: rgba(0, 0, 0, 0.377);
     border-radius: 5px;
     padding: 10px 0px 10px 20px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.192);
@@ -47,9 +47,11 @@ body{
 
 #login{
     background-color:rgba(169, 169, 169, 0.301);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
 }
 #senha{
     background-color: rgba(169, 169, 169, 0.301);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
 }
 
 #entrar{

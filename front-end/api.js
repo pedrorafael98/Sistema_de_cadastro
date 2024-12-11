@@ -1,11 +1,11 @@
 
-function usuario(request, response){
+async function usuario(request, dados){
    let cpf = window.document.getElementById("login");
    let senha = window.document.getElementById("senha");
    cpf = String(cpf.value);
    senha = String(senha.value);
     
-    response.json({
+    dados.json({
         cpfUser: cpf,
         senhaUser: senha,
         
@@ -13,4 +13,4 @@ function usuario(request, response){
     
 }
 
-//export default usuario;
+export default usuario;
