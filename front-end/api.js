@@ -1,16 +1,24 @@
 
-async function usuario(request, dados){
+ function usuario(request, dados){
    let cpf = window.document.getElementById("login");
    let senha = window.document.getElementById("senha");
    cpf = String(cpf.value);
    senha = String(senha.value);
-    
-    dados.json({
-        cpfUser: cpf,
-        senhaUser: senha,
-        
-    });
-    
+   fetch('http://localhost:2000/login',{
+    method: 'POST',
+    headers: {'Content-Type': 'applicatio'},
+    body: JSON.stringify({
+        cpf,
+        senha   
+    })
+   })
+   .then(resposta =>{
+       alert(`Seu acesso foi ${JSON.stringify(resposta.data)}`)
+   })
+   .catch(err => {
+    console.error(err)
+   })
+      
 }
 
-export default usuario;
+//export default usuario;
