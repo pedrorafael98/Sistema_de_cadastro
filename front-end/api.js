@@ -6,14 +6,15 @@
    senha = String(senha.value);
    fetch('http://localhost:2000/login',{
     method: 'POST',
-    headers: {'Content-Type': 'applicatio'},
+    headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
         cpf,
         senha   
     })
    })
+   .then(re => re.json())
    .then(resposta =>{
-       alert(`Seu acesso foi ${JSON.stringify(resposta.data)}`)
+       alert(`Seu acesso foi ${JSON.stringify(resposta)}`)
    })
    .catch(err => {
     console.error(err)
