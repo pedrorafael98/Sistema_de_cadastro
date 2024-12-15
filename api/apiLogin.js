@@ -12,7 +12,7 @@ app.post('/login', (req, res) =>{
     const {cpf, senha} = req.body;
     
      
-    res.json.stringify({deuCerto:'liberado'});
+    res.json("liberado");
 })
 
 
