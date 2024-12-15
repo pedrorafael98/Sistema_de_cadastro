@@ -1,4 +1,4 @@
-
+const butaoEntrar  = document.getElementById('entrar');
  function usuario(request, dados){
    let cpf = window.document.getElementById("login");
    let senha = window.document.getElementById("senha");
@@ -21,5 +21,7 @@
    })
       
 }
-
+butaoEntrar.addEventListener("click", ()=>{
+    usuario();
+})
 //export default usuario;
