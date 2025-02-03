@@ -15,7 +15,7 @@ const butaoEntrar  = document.getElementById('entrar');
    .then(re => re.json())
    .then( entrar =>{ 
         alert(`Seu acesso foi Liberado`);
-        window.location.href = JSON.stringify(entrar)
+        window.location.href = entrar
     })
    .catch(err => {
      alert(`Erro: ${err}!`)
