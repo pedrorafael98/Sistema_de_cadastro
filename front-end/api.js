@@ -13,12 +13,14 @@ const butaoEntrar  = document.getElementById('entrar');
     })
    })
    .then(re => re.json())
-   .then(resposta =>{
-       alert(`Seu acesso foi ${JSON.stringify(resposta)}`);
-   })
-   .then( entrar => window.location.href = 'file:///C:/Users/pedroarruda/Documents/GitHub/Sistema_de_cadastro/usuario/usuarioMain.html' )
+   .then( entrar =>{ 
+        alert(`Seu acesso foi Liberado`);
+        window.location.href = JSON.stringify(entrar)
+    })
    .catch(err => {
-    console.error(err)
+     alert(`Erro: ${err}!`)
+     console.error(err)
+    
    })
       
 }

@@ -11,9 +11,8 @@ app.listen(porta, ()=>{
 app.post('/login', (req, res) =>{
     const {cpf, senha} = req.body;
     
-     
-    res.json("liberado");
-    //window.location.href = 'file:///C:/Users/pedroarruda/Documents/GitHub/Sistema_de_cadastro/usuario/usuarioMain.html'
+    res.json("file:///C:/Users/pedroarruda/Documents/GitHub/Sistema_de_cadastro/usuario/usuarioMain.html");
+    
 })
 
 
