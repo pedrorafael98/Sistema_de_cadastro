@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration xmlns="org.hibernate">
+    <session-factory>
+        <!-- Conexão ao banco de dados -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/back_end</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">1233456</property>
+
+        <!-- Dialeto do Hibernate -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Configurações adicionais -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mapeamentos -->
+        <mapping class="com.back_end_sistema.model"/>
+    </session-factory>
+</hibernate-configuration>
