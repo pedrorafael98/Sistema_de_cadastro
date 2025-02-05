@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de usuario</title>
+</head>
+<body>
+    <div id="principal">
+        <h1>Cadastro de usuário</h1>
+        <form id = "formulario">
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" id="nome">
+            <br><br/>
+            <label for="matricula">Matricula Funcional: </label>
+            <input type="text" name="matricula" id="matricula">
+            <br><br/>
+            <label for="cpf">CPF: </label>
+            <input type="text" name="cpf" id="cpf">
+            <br><br/>
+            <label for="senha">Senha: </label>
+            <input type="password" name="senha" id="senha">
+            <br><br/>
+            <input type="submit" value="Criar">
+            
+        </form>
+        <script>
+             document.getElementById("formulario").addEventListener("submit", async function(event){
+                let nome = document.getElementById("nome").value;
+                let matricula = document.getElementById("matricula").value;
+                let cpf = document.getElementById("cpf").value;
+                let senha = document.getElementById("senha").value;
+
+                
+
+             })
+        </script>
+    </div>
+</body>
+</html>

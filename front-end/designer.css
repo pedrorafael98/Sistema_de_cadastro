@@ -9,7 +9,7 @@ html, body{
     margin: 0%;
 }
 body{
-    background-image: linear-gradient(to top, rgb(1, 75, 1), green, rgb(6, 221, 6));
+    background-image: linear-gradient(to top, rgba(1, 150, 250, 0.911), rgba(1, 101, 250, 0.699), rgba(1, 150, 250, 0.562));
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -21,7 +21,7 @@ body{
     margin: auto; 
     margin-top: 150px;
     width: 200px;
-    height: 150px;
+    height: 200px;
     border-style: groove;
     border-color: rgba(0, 0, 0, 0.377);
     border-radius: 5px;
@@ -56,4 +56,12 @@ body{
 
 #entrar{
     background-image: linear-gradient(to top, rgba(128, 128, 128, 0.5), white, rgba(128, 128, 128, 0.5));
+    margin-bottom: 5px;
+    position: relative;
+    bottom: 10px;
+}
+.links{
+    position: relative;
+    bottom: 15px;
+    
 }
