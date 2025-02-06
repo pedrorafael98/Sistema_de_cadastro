@@ -6,7 +6,7 @@ const porta = 2000;
 app.use(express.json())
 app.use(cors())
 app.listen(porta, ()=>{
-    console.log('Servidor rodando!')
+    console.log('Servidor rodando na porta!')
 })
 app.post('/login', (req, res) =>{
     const {cpf, senha} = req.body;
