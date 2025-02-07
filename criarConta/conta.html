@@ -30,7 +30,26 @@
                 let matricula = document.getElementById("matricula").value;
                 let cpf = document.getElementById("cpf").value;
                 let senha = document.getElementById("senha").value;
+                nome = String(nome)
+                matricula = String(matricula)
+                cpf = String(cpf)
+                senha = String(senha)
 
+                await fetch('http://localhost:5000/criarConta',{
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        nome,
+                        matricula,
+                        cpf,
+                        senha
+                    })
+                    .then(res => res.json())
+                    .then()
+                    .catch(err =>{
+                        alert(`ERRO: ${err}!`)
+                    })
+                })
                 
 
              })

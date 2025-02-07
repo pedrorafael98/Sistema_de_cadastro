@@ -13,6 +13,7 @@ app.use(helmet()); // Aplica segurança nas respostas HTTP
 app.use(morgan('dev')); // Log das requisições no console
 
 const PORT = process.env.PORTA
+const ROTA = process.env.ROTA_CRIAR_CONT
 
 app.get('/', (req, res) => {
     res.json({menssage:"Servidor rodando!"});
@@ -20,4 +21,28 @@ app.get('/', (req, res) => {
 app.listen(PORT, ()=>{
     console.log(`Servidor rodando na porta ${PORT}!`)
     
+    
 })
+app.post(ROTA, (req, res)=>{
+    const{nome,
+          matricula,
+          cpf,
+          senha} = req.body
+
+    
+})
+
+async function criandoConta(nome, matricula, cpf, senha) {
+    
+}
+function nome(nome){
+    const newNome = [...new Set(nome.split(''))] 
+    function semCaracteres(str){
+        const regex = /[a-zA-Z ]/;
+    }
+    if(newNome == " "){
+        return false
+    }else{
+        return true
+    }
+}
