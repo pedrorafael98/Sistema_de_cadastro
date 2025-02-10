@@ -33,16 +33,28 @@ app.post(ROTA, (req, res)=>{
 })
 
 async function criandoConta(nome, matricula, cpf, senha) {
-    
-}
-function nome(nome){
-    const newNome = [...new Set(nome.split(''))] 
-    function semCaracteres(str){
-        const regex = /[a-zA-Z ]/;
+    if(vazio(nome) && vazio(matricula) && vazio(cpf) && vazio(senha)){
+        if(semCaracteres(nome)){
+            res.json("Nome não pode conter caracteres especiais!")
+        }else{
+            
+        }
+        
+    }else{
+        res.json("Nome, matricula, cpf e senha, são campos de preenchimento obrigatorio!")
     }
-    if(newNome == " "){
+}
+function vazio(vORc){
+    const newTeste = [...new Set(vORc.split(''))] 
+  
+    if(newTeste == " "){
         return false
     }else{
         return true
     }
+} 
+function semCaracteres(str){
+        const regex = /[^a-zA-Z ]/;
+    
+        return regex.test(str);
 }

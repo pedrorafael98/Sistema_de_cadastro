@@ -1,10 +1,15 @@
-function teste(){
-    const nome = "            "
-    const newNome = [... new Set(nome.split(''))]
-    if(newNome == " "){
-        console.log('vazio')
-    }else{
-        console.log('não vazio')
-    }
+
+function semCaracteres(str){
+    const regex = /[^a-zA-Z ]/;
+
+    return regex.test(str);
 }
-teste()
+const nome = "pedro rafael!"
+if(semCaracteres(nome)){
+    console.log("n deu certo!")
+}else{
+    console.log("Deu certo!")
+}
+    
+
+
