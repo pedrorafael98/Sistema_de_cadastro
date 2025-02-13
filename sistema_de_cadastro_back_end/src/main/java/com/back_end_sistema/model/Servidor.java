@@ -11,6 +11,13 @@ public class Servidor {
         get("/hello", (req, res)->{
             return new Gson().toJson(new Resposta("Servidor on-line"));
         });
+
+        post("/echo", (req, res)->{
+            Gson gson = new Gson();
+            String nome, matricula, cpf, senha = gson.fromJson(req.body(), String.class);
+            Requisicao requisicao = gson.fromJson(req.body(), Requisicao.class);
+            return gson.toJson(new Resposta("Recebido: " + requisicao.mensagem));
+        });
     }
 
 }
