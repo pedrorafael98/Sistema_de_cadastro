@@ -28,7 +28,7 @@ app.post(ROTA, (req, res)=>{
           matricula,
           cpf,
           senha} = req.body
-
+        
     
 })
 
@@ -37,7 +37,24 @@ async function criandoConta(nome, matricula, cpf, senha) {
         if(semCaracteres(nome)){
             res.json("Nome não pode conter caracteres especiais!")
         }else{
-            
+            if(senha.length >= 5){
+                await fetch('http://localhost:8080/echo', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        nome,
+                        matricula,
+                        cpf,
+                        senha  
+                    })
+                })
+                .then(re => re.json())
+                .catch(err => {
+                    console.log(err)
+                })
+            }else{
+                res.JSON("Senha deve conter 5 ou mais caracteres!")
+            }
         }
         
     }else{
