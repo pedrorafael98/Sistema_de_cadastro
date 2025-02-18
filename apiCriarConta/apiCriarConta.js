@@ -28,7 +28,7 @@ app.post(ROTA, (req, res)=>{
           matricula,
           cpf,
           senha} = req.body
-        
+    criandoConta(nome, matricula, cpf, senha)   
     
 })
 

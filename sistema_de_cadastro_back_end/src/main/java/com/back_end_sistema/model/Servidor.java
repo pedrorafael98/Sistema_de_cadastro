@@ -38,7 +38,6 @@ public class Servidor {
             em.getTransaction().begin();
             em.persist(usuario);
             em.getTransaction().commit();
-
             em.close();
             emf.close();
 
