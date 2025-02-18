@@ -27,13 +27,13 @@
         <script>
              document.getElementById("formulario").addEventListener("submit", async function(event){
                 let nome = document.getElementById("nome").value;
-                let matricula = document.getElementById("matricula").value;
-                let cpf = document.getElementById("cpf").value;
-                let senha = document.getElementById("senha").value;
-                nome = String(nome)
-                matricula = String(matricula)
-                cpf = String(cpf)
-                senha = String(senha)
+                let matricula = document.getElementById("matricula");
+                let cpf = document.getElementById("cpf");
+                let senha = document.getElementById("senha");
+                nome = String(nome.value)
+                matricula = String(matricula.value)
+                cpf = String(cpf.value)
+                senha = String(senha.value)
 
                 await fetch('http://localhost:5000/criarConta',{
                     method: 'POST',
@@ -45,7 +45,7 @@
                         senha
                     })
                     .then(res => res.json())
-                    .then()
+                    .then(deuCerto => alert("Deu certo caralho!"))
                     .catch(err =>{
                         alert(`ERRO: ${err}!`)
                     })
