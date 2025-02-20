@@ -4,14 +4,20 @@ import static spark.Spark.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.back_end_sistema.Main;
 import com.google.gson.Gson;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
+@SpringBootApplication
 public class Servidor {
     public static void main(String[] args) {
+        SpringApplication.run(Servidor.class, args);
         port(8080);
 
         before((req, res) -> res.type("application/json"));

@@ -1,3 +1,6 @@
+com\back_end_sistema\model\Requisicao.class
+com\back_end_sistema\model\Usuario.class
 com\back_end_sistema\Main.class
 com\back_end_sistema\model\Servidor.class
+com\back_end_sistema\model\Dados.class
 com\back_end_sistema\model\Resposta.class

@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const axios = require('axios');
 
 const app = express();
 // Configurações básicas
@@ -28,30 +29,21 @@ app.post(ROTA, (req, res)=>{
           matricula,
           cpf,
           senha} = req.body
-    criandoConta(nome, matricula, cpf, senha)   
+    criandoConta(nome, matricula, cpf, senha)
+    axios
     
 })
 
 async function criandoConta(nome, matricula, cpf, senha) {
+    const dados = {"nome": nome, "matricula": matricula, "cpf": cpf, "senha": senha}
     if(vazio(nome) && vazio(matricula) && vazio(cpf) && vazio(senha)){
         if(semCaracteres(nome)){
             res.json("Nome não pode conter caracteres especiais!")
         }else{
             if(senha.length >= 5){
-                await fetch('http://localhost:8080/echo', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({
-                        nome,
-                        matricula,
-                        cpf,
-                        senha  
-                    })
-                })
-                .then(re => re.json())
-                .catch(err => {
-                    console.log(err)
-                })
+                await axios.post('http://localhost:8080/api/dados', dados)
+                .then(response => console.log(response.data))
+                .catch(erro=> console.error("Erro: ",erro));
             }else{
                 res.JSON("Senha deve conter 5 ou mais caracteres!")
             }
