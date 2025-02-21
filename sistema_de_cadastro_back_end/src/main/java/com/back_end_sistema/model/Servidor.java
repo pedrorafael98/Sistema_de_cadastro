@@ -28,6 +28,7 @@ public class Servidor {
 
         post("/echo", (req, res)->{
             Gson gson = new Gson();
+            Dados dados = new Dados();
             List<String> lista = new ArrayList<String>();
             lista.add(gson.fromJson(req.body(), String.class));
             
@@ -37,6 +38,7 @@ public class Servidor {
         });
     }
     static void createUsuario(String nome, String matricula, String cpf, String senha){
+            
             Usuario usuario = new Usuario(nome, matricula, cpf, senha);
             EntityManagerFactory emf = Persistence.createEntityManagerFactory("back_end");
             EntityManager em = emf.createEntityManager();

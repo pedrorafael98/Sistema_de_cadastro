@@ -1,5 +1,7 @@
 package com.back_end_sistema.model;
 
+import java.util.Map;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,6 +31,10 @@ public class Usuario {
     }
     
         
+
+    public Usuario(Map<String, Object> dados) {
+        //TODO Auto-generated constructor stub
+    }
 
     public Long getId() {
         return id;
