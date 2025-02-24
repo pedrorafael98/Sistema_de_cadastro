@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/echo")
+@RequestMapping("/api")
 public class Dados {
-    @RequestMapping("/dados")
+    
     public ResponseEntity<Map> receberDados(@RequestBody Map<String, Object> dados){
         return ResponseEntity.ok(dados);
     }

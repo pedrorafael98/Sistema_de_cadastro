@@ -18,24 +18,7 @@ import jakarta.persistence.Persistence;
 public class Servidor {
     public static void main(String[] args) {
         SpringApplication.run(Servidor.class, args);
-        port(8080);
-
-        before((req, res) -> res.type("application/json"));
-
-        get("/hello", (req, res)->{
-            return new Gson().toJson(new Resposta("Servidor on-line"));
-        });
-
-        post("/echo", (req, res)->{
-            Gson gson = new Gson();
-            Dados dados = new Dados();
-            List<String> lista = new ArrayList<String>();
-            lista.add(gson.fromJson(req.body(), String.class));
-            
-            Requisicao requisicao = gson.fromJson(req.body(), Requisicao.class);
-            
-            return gson.toJson(new Resposta("Recebido: " + requisicao.mensagem));
-        });
+        System.out.println("Servidor Ligado!");
     }
     static void createUsuario(String nome, String matricula, String cpf, String senha){
             
